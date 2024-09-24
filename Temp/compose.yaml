@@ -23,3 +23,5 @@ services:
     volumes:
       - ./mosquitto.conf:/mosquitto/config/mosquitto.conf:ro
       - mosquitto_data:/mosquitto/data
+volumes:
+  mosquitto_data:
