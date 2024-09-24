@@ -8,9 +8,9 @@ services:
       - "1883:1883"
       - "9001:9001"
     volumes:
-      - ./data/mosquitto/config: /mosquitto/config
-      - ./data/mosquitto/data: /mosquitto/data
-      - ./data/mosquitto/log: /mosquitto/log
+      - ./data/mosquitto/config:/mosquitto/config
+      - ./data/mosquitto/data:/mosquitto/data
+      - ./data/mosquitto/log:/mosquitto/log
 volumes:
   config:
   data:
