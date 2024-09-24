@@ -11,6 +11,7 @@ mosquitto is the MQTT broker service. It uses the eclipse-mosquitto:2 image and 
 
 ## Setup:
 - Install Docker and Docker Compose on your Raspberry Pi.
+    `sudo apt-get install docker-compose`
 - Create the configuration files (hostapd.conf, dnsmasq.conf, and mosquitto.conf) in the same directory as the Docker Compose YAML file.
 - Replace your_password with your desired WiFi password in hostapd.conf.
 - Replace YourAccessPointName with your desired WiFi access point name in hostapd.conf.
