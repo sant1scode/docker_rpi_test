@@ -1,28 +1,11 @@
 # version: '3'
-
 services:
   hostapd:
-    image: linuxserver/hostapd
-    restart: always
-    network_mode: host
-    environment:
-      - INTERFACE=wlan0
-      - DRIVERS=nl80211
-      - CHANNEL=6
-      - HW_MODE=g
-      - IEEE80211N=1
-      - WMM_ENABLED=1
-      - MAC_ADDRESS_FILE=/etc/hostapd/macaddress.conf
-      - AUTH_ALGS=1
-      - WPA=2
-      - WPA_PASSPHRASE=ST_Password
-      - WPA_KEY_MGMT=WPA-PSK
-      - RSNA_AUTH_MODE=1
-    volumes:
-      - ./hostapd.conf:/etc/hostapd/hostapd.conf:ro
-    cap_add:
-      - NET_ADMIN
-
+      build: .
+      restart: always
+      network_mode: host
+      cap_add:
+        - NET_ADMIN
   dnsmasq:
     image: linuxserver/dnsmasq
     restart: always
@@ -32,7 +15,6 @@ services:
       - DNSMASQ_LOG_DHC=-q
     volumes:
       - ./dnsmasq.conf:/etc/dnsmasq.conf:ro
-
   mosquitto:
     image: eclipse-mosquitto:2
     restart: always
@@ -41,6 +23,3 @@ services:
     volumes:
       - ./mosquitto.conf:/mosquitto/config/mosquitto.conf:ro
       - mosquitto_data:/mosquitto/data
-
-volumes:
-  mosquitto_data:
