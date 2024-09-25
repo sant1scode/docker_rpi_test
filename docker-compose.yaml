@@ -15,7 +15,7 @@ services:
 ## Portainer
   portainer-ce:
     container_name: portainer
-    image: portainer/portainer-ce:alpine-sts
+    image: portainer/portainer-ce:linux-arm64
     restart: unless-stopped
     ports:
       - 8000:8000
