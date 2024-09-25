@@ -3,7 +3,7 @@ services:
   mqtt:
     container_name: mosquitto
     image: eclipse-mosquitto:latest
-    restart: always
+    restart: unless-stopped
     ports:
       - "1883:1883"
       - "9001:9001"
@@ -11,7 +11,24 @@ services:
       - /home/tapias/Documents/docker_rpi_test/data/mosquitto/config:/mosquitto/config
       - /home/tapias/Documents/docker_rpi_test/data/mosquitto/data:/mosquitto/data
       - /home/tapias/Documents/docker_rpi_test/data/mosquitto/log:/mosquitto/log
+
+## Portainer
+  portainer-ce:
+    container_name: portainer
+    image: portainer/portainer-ce:latest
+    restart: unless-stopped
+    ports:
+      - 8000:8000
+      - 9443:9443
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - portainer_data:/data
+
 volumes:
   config:
   data:
   log:
+  portainer_data:
+    external: true
+    name: portainer_data
+      
