@@ -15,7 +15,7 @@ services:
 ## Portainer
   portainer-ce:
     container_name: portainer
-    image: portainer/portainer-ce:latest
+    image: portainer/portainer-ce:alpine-sts
     restart: unless-stopped
     ports:
       - 8000:8000
@@ -31,4 +31,5 @@ volumes:
   portainer_data:
     # external: true
     # name: portainer_data
-      
+
+
