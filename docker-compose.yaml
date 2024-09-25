@@ -11,7 +11,7 @@ services:
       - ./data/mosquitto/config:/mosquitto/config
       - ./data/mosquitto/data:/mosquitto/data
       - ./data/mosquitto/log:/mosquitto/log
-volumes:
-  config:
-  data:
-  log:
+# volumes:
+#   config:
+#   data:
+#   log:
