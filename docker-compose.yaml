@@ -29,6 +29,6 @@ volumes:
   data:
   log:
   portainer_data:
-    external: true
-    name: portainer_data
+    # external: true
+    # name: portainer_data
       
