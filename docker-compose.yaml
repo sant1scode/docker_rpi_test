@@ -13,21 +13,21 @@ services:
       - /home/tapias/Documents/docker_rpi_test/data/mosquitto/log:/mosquitto/log
 
 ## Portainer
-  portainer-ce:
-    container_name: portainer
-    image: portainer/portainer-ce:linux-arm
-    restart: unless-stopped
-    ports:
-      - 9000:9000
-    volumes:
-      - /var/run/docker.sock:/var/run/docker.sock
-      - portainer_data:/data
+  # portainer-ce:
+  #   container_name: portainer
+  #   image: portainer/portainer-ce:linux-arm
+  #   restart: unless-stopped
+  #   ports:
+  #     - 9000:9000
+  #   volumes:
+  #     - /var/run/docker.sock:/var/run/docker.sock
+  #     - portainer_data:/data
 
 volumes:
   config:
   data:
   log:
-  portainer_data:
+  # portainer_data:
     # external: true
     # name: portainer_data
 
